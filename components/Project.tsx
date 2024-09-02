@@ -11,7 +11,7 @@ export default function Project() {
     { title: 'ToDo List', src: '/project1.jpg', url: 'https://todo-abstergo.vercel.app/' },
     { title: 'Blog', src: '/project2.jpg', url: 'https://blog-web-abstergo.vercel.app/' },
     { title: 'Crypto Wallet', src: '/project3.jpg', url: 'https://wallet-abstergo.vercel.app/' },
-    { title: 'Forums', src: '/project4.jpg', url: 'https://forums-abstergo.vercel.app/' },
+    { title: 'Forums', src: '/project4.png', url: 'https://forums-abstergo.vercel.app/' },
     { title: '', src: '/comingSoon.jpg', url: '#' },
     { title: '', src: '/comingSoon.jpg', url: '#' },
   ];
