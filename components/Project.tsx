@@ -12,10 +12,9 @@ export default function Project() {
     { title: 'Blog', src: '/project2.jpg', url: 'https://blog-web-abstergo.vercel.app/' },
     { title: 'Crypto Wallet', src: '/project3.jpg', url: 'https://wallet-abstergo.vercel.app/' },
     { title: 'Forums', src: '/project4.png', url: 'https://forums-abstergo.vercel.app/' },
-    { title: 'Chat App', src: '/project5.png', url: 'https://chat-app-abstergo.vercel.app/' },
+    { title: 'Chat App', src: '/project5.png', url: 'https://github.com/Absterrg0/chatApp' },
     { title: '', src: '/comingSoon.jpg', url: '#' },
   ];
-
   // Handle card click to redirect
   const handleCardClick = (url: string) => {
     router.push(url);
