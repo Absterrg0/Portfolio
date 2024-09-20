@@ -13,7 +13,7 @@ export default function Project() {
     { title: 'Crypto Wallet', src: '/project3.jpg', url: 'https://wallet-abstergo.vercel.app/' },
     { title: 'Forums', src: '/project4.png', url: 'https://forums-abstergo.vercel.app/' },
     { title: 'Chat App', src: '/project5.png', url: 'https://github.com/Absterrg0/chatApp' },
-    { title: '', src: '/comingSoon.jpg', url: '#' },
+    { title: 'OpenSource Repositories', src: '/project6.png', url: 'https://repoflow-abstergo.vercel.app/' },
   ];
   // Handle card click to redirect
   const handleCardClick = (url: string) => {
