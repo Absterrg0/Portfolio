@@ -8,7 +8,7 @@ export default function Project() {
 
   // Updated projectCards with URLs
   const projectCards = [
-    { title: 'ToDo List', src: '/project1.jpg', url: 'https://todo-abstergo.vercel.app/' },
+    { title: 'DecentraWork', src: '/project1.jpg', url: 'https://decentra-work.vercel.app/' },
     { title: 'Blog', src: '/project2.jpg', url: 'https://blog-web-abstergo.vercel.app/' },
     { title: 'Solana Token Launcher', src: '/project3.jpg', url: 'https://launcher-solana.vercel.app/' },
     { title: 'Forums', src: '/project4.png', url: 'https://forums-abstergo.vercel.app/' },
