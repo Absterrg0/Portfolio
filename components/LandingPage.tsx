@@ -1,18 +1,17 @@
 'use client'
+
 import React, { useState } from 'react'
 import { Mail, Github, Linkedin, Twitter, ExternalLink } from 'lucide-react'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import Image from 'next/image'
-import toast from 'react-hot-toast'
 
 export default function LandingPage() {
-    const [copyNotification, setCopyNotification] = useState(false);
-    const [showEmail, setShowEmail] = useState(false);
+  const [copyNotification, setCopyNotification] = useState(false)
 
   const skills = [
     "Next.js", "React", "TypeScript", "Tailwind CSS", "HTML5/CSS3",
     "Node.js", "PostgreSQL", "Express", "REST API", "GraphQL",
-    "Git", "Docker", "AWS", "Firebase", "NextJs","Prisma"
+    "Git", "Docker", "AWS", "Firebase", "Prisma"
   ]
 
   const projectCards = [
@@ -23,11 +22,10 @@ export default function LandingPage() {
   ]
 
   const handleEmailClick = () => {
-    navigator.clipboard.writeText("parvj5212@gmail.com");
-    setCopyNotification(true);
-    setTimeout(() => setCopyNotification(false), 2000); // Hide notification after 2 seconds
-  };
-
+    navigator.clipboard.writeText("parvj5212@gmail.com")
+    setCopyNotification(true)
+    setTimeout(() => setCopyNotification(false), 2000)
+  }
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,15 +47,15 @@ export default function LandingPage() {
 
   return (
     <div className="bg-gradient-to-br from-[#0c0718] to-[#1a0b2e] min-h-screen text-white">
-      <div className="max-w-6xl mx-auto px-4 py-12">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
         {/* Animated Header */}
         <motion.nav 
-          className="flex justify-center items-center mb-16"
+          className="flex justify-center items-center mb-12 sm:mb-16"
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <h1 className="text-5xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500 cursor-pointer">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500 cursor-pointer">
             Abstergo
           </h1>
         </motion.nav>
@@ -65,34 +63,34 @@ export default function LandingPage() {
         {/* Hero Section */}
         <motion.section 
           id="about" 
-          className="mb-32"
+          className="mb-16 sm:mb-24 md:mb-32"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <div className="flex flex-col md:flex-row items-center gap-12">
-            <div className="md:w-1/2 space-y-6">
-              <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500">
+          <div className="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+            <div className="w-full md:w-1/2 space-y-4 sm:space-y-6 text-center md:text-left">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500">
                 Web Developer & Designer
               </h2>
-              <p className="text-lg text-gray-300">
+              <p className="text-base sm:text-lg text-gray-300">
                 A passionate 20-year-old web developer, familiar with NextJs, React, Postgres, and more. 
                 Love to code and build webapps from scratch.
               </p>
             </div>
             <motion.div 
-              className="md:w-1/2 flex justify-center"
+              className="w-full md:w-1/2 flex justify-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <div className="relative">
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64">
                 <div className="absolute inset-0 bg-gradient-to-r from-amber-300 to-pink-500 rounded-full blur-3xl opacity-50"></div>
                 <Image 
                   src="/avatar.jpeg" 
                   alt="Profile" 
-                  width={256}
-                  height={256}
-                  className="relative w-64 h-64 rounded-full object-cover border-2 border-amber-300"
+                  layout="fill"
+                  objectFit="cover"
+                  className="rounded-full object-cover border-4 border-amber-300 shadow-lg"
                 />
               </div>
             </motion.div>
@@ -102,21 +100,21 @@ export default function LandingPage() {
         {/* Redesigned Skills Section */}
         <motion.section 
           id="skills" 
-          className="mb-32"
+          className="mb-16 sm:mb-24 md:mb-32"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500 mb-12 text-center">Skills & Technologies</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500 mb-8 sm:mb-12 text-center">Skills & Technologies</h2>
           <motion.div 
-            className="flex flex-wrap justify-center gap-4"
+            className="flex flex-wrap justify-center gap-3 sm:gap-4"
             variants={containerVariants}
           >
             {skills.map((skill) => (
               <motion.span
                 key={skill}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2
-                  text-sm text-gray-300 hover:bg-white/10 hover:border-amber-300/50 transition-all duration-300"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-3 py-1 sm:px-4 sm:py-2
+                  text-xs sm:text-sm text-gray-300 hover:bg-white/10 hover:border-amber-300/50 transition-all duration-300"
                 variants={itemVariants}
                 whileHover={{ scale: 1.05, rotate: 3 }}
                 whileTap={{ scale: 0.95 }}
@@ -130,45 +128,45 @@ export default function LandingPage() {
         {/* Updated Projects Section */}
         <motion.section 
           id="projects" 
-          className="mb-32"
+          className="mb-16 sm:mb-24 md:mb-32"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500 mb-12 text-center">Projects</h2>
-          <div className="space-y-12">
+          <h2 className="text-2xl sm:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-pink-500 mb-8 sm:mb-12 text-center">Projects</h2>
+          <div className="grid grid-cols-1 gap-8">
             {projectCards.map((project, index) => (
               <motion.div
                 key={project.title}
                 className="bg-white/5 border border-white/10 rounded-xl overflow-hidden
                   hover:bg-white/10 hover:border-amber-300/50 transition-all duration-300 group
-                  flex flex-col md:flex-row items-stretch h-[400px]"
+                  flex flex-col"
                 variants={itemVariants}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >
-                <div className="md:w-1/2 relative h-full">
+                <div className="relative h-48 sm:h-56 md:h-64">
                   <Image
                     src={project.src}
                     alt={project.title}
-                    width={600}
-                    height={400}
-                    className="object-cover w-full h-full"
+                    layout="fill"
+                    objectFit="cover"
+                    className="group-hover:scale-105 transition-transform duration-300"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#0c0718]/80 to-transparent md:bg-gradient-to-b"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c0718]/80 to-transparent"></div>
                 </div>
-                <div className="md:w-1/2 p-6 flex flex-col justify-between">
+                <div className="p-4 sm:p-6 flex flex-col justify-between flex-grow">
                   <div>
-                    <h3 className="text-2xl font-semibold mb-3 group-hover:text-amber-300 transition-colors">
+                    <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 group-hover:text-amber-300 transition-colors">
                       {project.title}
                     </h3>
-                    <p className="text-gray-300">{project.description}</p>
+                    <p className="text-sm sm:text-base text-gray-300">{project.description}</p>
                   </div>
                   <a
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center text-amber-300 hover:text-amber-400 transition-colors"
+                    className="inline-flex items-center text-amber-300 hover:text-amber-400 transition-colors mt-4 text-sm sm:text-base"
                   >
                     View Project <ExternalLink className="ml-2 w-4 h-4" />
                   </a>
@@ -176,58 +174,73 @@ export default function LandingPage() {
               </motion.div>
             ))}
           </div>
-
-          {copyNotification && (
-        <div className="fixed bottom-8 right-8 bg-gray-800 text-white text-sm rounded-lg px-4 py-2 shadow-lg">
-          Email copied to clipboard!
-        </div>
-      )}
         </motion.section>
 
         {/* Footer */}
         <motion.footer 
-          className="border-t border-white/10 pt-8 pb-8 flex justify-between items-center"
+          className="border-t border-white/10 pt-6 pb-6 sm:pt-8 sm:pb-8 flex flex-col sm:flex-row justify-between items-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.5 }}
         >
-          <p className="text-center text-white/60 mt-4">
+          <p className="text-center text-white/60 mb-4 sm:mb-0 text-sm sm:text-base">
             © 2024 Abstergo. All rights reserved.
           </p>
-          <div className="flex gap-4">
-            <button
+          <div className="flex gap-4 sm:gap-6">
+            <motion.button
               className="text-white/60 hover:text-amber-300 transition-colors"
               onClick={handleEmailClick}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Mail className="w-6 h-6" />
-            </button>
-            <a
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6" />
+            </motion.button>
+            <motion.a
               href="https://github.com/Absterrg0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-amber-300 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Github className="w-6 h-6" />
-            </a>
-            <a
+              <Github className="w-5 h-5 sm:w-6 sm:h-6" />
+            </motion.a>
+            <motion.a
               href="https://www.linkedin.com/in/parv-jain-82169b297/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-amber-300 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
+              <Linkedin className="w-5 h-5 sm:w-6 sm:h-6" />
+            </motion.a>
+            <motion.a
               href="https://x.com/Abstergo471240"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white/60 hover:text-amber-300 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
-              <Twitter className="w-6 h-6" />
-            </a>
+              <Twitter className="w-5 h-5 sm:w-6 sm:h-6" />
+            </motion.a>
           </div>
         </motion.footer>
       </div>
+
+      <AnimatePresence>
+        {copyNotification && (
+          <motion.div 
+            className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 bg-gray-800 text-white text-xs sm:text-sm rounded-lg px-3 py-2 sm:px-4 sm:py-2 shadow-lg"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+          >
+            Email copied to clipboard!
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   )
 }
