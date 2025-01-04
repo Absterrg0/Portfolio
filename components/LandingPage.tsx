@@ -235,7 +235,7 @@ export default function LandingPage() {
               <Linkedin className="w-6 h-6" />
             </a>
             <a
-              href="https://x.com/Abstergo471240"
+              href="https://x.com/Absterrg0"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 hover:text-blue-300 transition-colors"
