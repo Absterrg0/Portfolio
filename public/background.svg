@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="metallicGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1f25;stop-opacity:0.8">
+        <animate attributeName="stop-opacity" values="0.8;0.9;0.8" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="50%" style="stop-color:#2a3038;stop-opacity:0.9">
+        <animate attributeName="stop-opacity" values="0.9;1;0.9" dur="8s" repeatCount="indefinite" />
+      </stop>
+      <stop offset="100%" style="stop-color:#1a1f25;stop-opacity:0.8">
+        <animate attributeName="stop-opacity" values="0.8;0.9;0.8" dur="8s" repeatCount="indefinite" />
+      </stop>
+    </linearGradient>
+    <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#3a4150" stroke-width="0.5" stroke-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="100" height="100" fill="url(#metallicGrad)"/>
+  <rect width="100" height="100" fill="url(#grid)"/>
+  <path d="M0 20 Q 25 50 50 20 T 100 20" fill="none" stroke="#4a5160" stroke-width="0.2" stroke-opacity="0.1">
+    <animate attributeName="d" 
+      values="
+        M0 20 Q 25 50 50 20 T 100 20;
+        M0 20 Q 25 40 50 20 T 100 20;
+        M0 20 Q 25 50 50 20 T 100 20"
+      dur="15s" 
+      repeatCount="indefinite"/>
+  </path>
+</svg>
