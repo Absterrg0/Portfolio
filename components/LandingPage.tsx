@@ -19,19 +19,19 @@ export default function LandingPage() {
       title: 'DecentraWork', 
       description: "Web3-powered freelancing platform using Solana blockchain.", 
       src: '/project1.jpg', 
-      url: 'https://decentra-work.vercel.app/' 
+      url: 'https://decentrawork.abstergo.dev/' 
     },
     { 
       title: 'Solana Token Launcher', 
       description: "Platform for launching and managing Solana-based tokens.", 
       src: '/project3.jpg', 
-      url: 'https://launcher-solana.vercel.app/' 
+      url: 'https://launcher.abstergo.dev/' 
     },
     { 
       title: 'OpenSource Repositories', 
       description: "Platform for showcasing and contributing to open-source projects.", 
       src: '/project6.png', 
-      url: 'https://repoflow-abstergo.vercel.app/' 
+      url: 'https://repoflow.abstergo.dev/' 
     },
     { 
       title: 'Forums', 
