@@ -42,7 +42,7 @@ export default function LandingPage() {
   ]
 
   const handleEmailClick = () => {
-    navigator.clipboard.writeText("parvj5212@gmail.com")
+    navigator.clipboard.writeText("ParvJ@abstergo.dev")
     setCopyNotification(true)
     setTimeout(() => setCopyNotification(false), 2000)
   }
