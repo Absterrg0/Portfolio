@@ -34,10 +34,10 @@ export default function LandingPage() {
       url: 'https://repoflow.abstergo.dev/' 
     },
     { 
-      title: 'Forums', 
-      description: "Modern forum platform for open-source enthusiasts.", 
-      src: '/project4.png', 
-      url: 'https://forums-abstergo.vercel.app/' 
+      title: 'Droplert', 
+      description: "Real time notification system for any website through an npm package integration", 
+      src: '/DarkLogo.png', 
+      url: 'https://droplert.abstergo.dev/' 
     }
   ]
 
