@@ -175,10 +175,10 @@ export default function LandingPage() {
             ))}
           </div>
         </section>
-
+{/* 
         <section className="mb-32">
           <Blogs />
-        </section>
+        </section> */}
 
         {/* Footer */}
         <footer className="border-t border-white/10 pt-8 pb-8 flex flex-col sm:flex-row justify-between items-center">
