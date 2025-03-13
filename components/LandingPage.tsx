@@ -17,6 +17,12 @@ export default function LandingPage() {
 
   const projectCards = [
     { 
+      title: 'Droplert', 
+      description: "Real time notification system for any website through an npm package integration", 
+      src: '/DarkLogo.png', 
+      url: 'https://droplert.abstergo.dev/' 
+    },
+    { 
       title: 'DecentraWork', 
       description: "Web3-powered freelancing platform using Solana blockchain.", 
       src: '/project1.jpg', 
@@ -29,17 +35,12 @@ export default function LandingPage() {
       url: 'https://launcher.abstergo.dev/' 
     },
     { 
-      title: 'OpenSource Repositories', 
-      description: "Platform for showcasing and contributing to open-source projects.", 
-      src: '/project6.png', 
-      url: 'https://repoflow.abstergo.dev/' 
+      title: 'JustDraw', 
+      description: "A single-user drawing app with customizable tools and shape selection.", 
+      src: '/project7.png', 
+      url: 'https://justdraw.abstergo.dev/' 
     },
-    { 
-      title: 'Droplert', 
-      description: "Real time notification system for any website through an npm package integration", 
-      src: '/DarkLogo.png', 
-      url: 'https://droplert.abstergo.dev/' 
-    }
+
   ]
 
   const handleEmailClick = () => {
