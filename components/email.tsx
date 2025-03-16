@@ -4,7 +4,7 @@ import type React from "react"
 
 import { useState } from "react"
 import { Send } from "lucide-react"
-import { toast } from "sonner"
+import { toast } from "sonner" 
 
 export default function EmailComponent() {
   const [isLoading, setIsLoading] = useState(false)
@@ -36,7 +36,7 @@ export default function EmailComponent() {
       const data = await response.json()
 
       if (response.ok) {
-        toast.success("Message sent successfully")
+        toast.info("Email sent successfully") // This should now work with the global Toaster
         // Reset the form
         setFormData({
           name: "",
@@ -48,7 +48,8 @@ export default function EmailComponent() {
         throw new Error(data.error || "Failed to send message")
       }
     } catch (error) {
-        toast.error("Failed to send message")
+      toast.error("Failed to send message") // This should now work with the global Toaster
+      console.error("Email send error:", error)
     } finally {
       setIsLoading(false)
     }
@@ -162,4 +163,3 @@ export default function EmailComponent() {
     </section>
   )
 }
-

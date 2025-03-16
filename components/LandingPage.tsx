@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import GitHubCalendar from 'react-github-calendar'
 import { Mail, Github, Linkedin, Twitter } from 'lucide-react'
