@@ -5,9 +5,9 @@ import Image from 'next/image'
 import GitHubCalendar from 'react-github-calendar'
 import { Mail, Github, Linkedin, Twitter } from 'lucide-react'
 import Blogs from './Blogs'
+import EmailComponent from './email'
 
 export default function LandingPage() {
-  const [copyNotification, setCopyNotification] = useState(false)
 
   const skills = [
     "Next.js", "React", "TypeScript", "Tailwind CSS", "Solidity",
@@ -42,12 +42,6 @@ export default function LandingPage() {
     },
 
   ]
-
-  const handleEmailClick = () => {
-    navigator.clipboard.writeText("ParvJ@abstergo.dev")
-    setCopyNotification(true)
-    setTimeout(() => setCopyNotification(false), 2000)
-  }
 
   return (
     <div className="min-h-screen text-gray-100 relative overflow-hidden bg-gradient-to-b from-[#0f1218] to-[#151922]">
@@ -176,6 +170,10 @@ export default function LandingPage() {
             ))}
           </div>
         </section>
+
+        <section>
+          <EmailComponent></EmailComponent>
+        </section>
 {/* 
         <section className="mb-32">
           <Blogs />
@@ -188,7 +186,7 @@ export default function LandingPage() {
           </p>
           <div className="flex gap-8">
             <button
-              onClick={handleEmailClick}
+              onClick={()=>{}}
               className="text-gray-400 hover:text-cyan-300 transition-colors duration-300"
             >
               <Mail className="w-6 h-6" />
@@ -213,13 +211,6 @@ export default function LandingPage() {
         </footer>
       </div>
 
-      {/* Notification */}
-      {copyNotification && (
-        <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 bg-white/10 backdrop-blur-xl 
-                      text-cyan-300 text-sm rounded-full px-6 py-3 shadow-lg border border-white/20">
-          Email copied to clipboard!
-        </div>
-      )}
 
       <style jsx>{`
         @keyframes fadeIn {
