@@ -2,12 +2,14 @@
 
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
 import GitHubCalendar from 'react-github-calendar'
-import { Mail, Github, Linkedin, Twitter } from 'lucide-react'
+import { Mail, Github, Linkedin, Twitter, FileText } from 'lucide-react'
 import Blogs from './Blogs'
 import EmailComponent from './email'
 
 export default function LandingPage() {
+  const router = useRouter();
 
   const skills = [
     "Next.js", "React", "TypeScript", "Tailwind CSS", "Solidity",
@@ -40,8 +42,11 @@ export default function LandingPage() {
       src: '/project7.png', 
       url: 'https://justdraw.abstergo.dev/' 
     },
-
   ]
+
+  const viewResume = () => {
+    router.push('/resume');
+  }
 
   return (
     <div className="min-h-screen text-gray-100 relative overflow-hidden bg-gradient-to-b from-[#0f1218] to-[#151922]">
@@ -81,6 +86,16 @@ export default function LandingPage() {
                 A passionate 20-year-old web developer, specializing in NextJs, React, and Postgres. 
                 Turning ideas into stunning web applications from the ground up.
               </p>
+              
+              {/* Resume Button */}
+              <button 
+                onClick={viewResume}
+                className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 
+                           rounded-full text-white font-semibold transition-all duration-300 
+                           hover:from-cyan-600 hover:to-blue-600 hover:shadow-lg hover:shadow-blue-500/20"
+              >
+                View Resume <FileText className="w-5 h-5" />
+              </button>
             </div>
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="relative w-72 h-72 md:w-96 md:h-96">
@@ -96,6 +111,7 @@ export default function LandingPage() {
             </div>
           </div>
         </section>
+
 
         {/* Skills Section */}
         <section className="mb-32">
@@ -185,12 +201,6 @@ export default function LandingPage() {
             © 2024 Abstergo. All rights reserved.
           </p>
           <div className="flex gap-8">
-            <button
-              onClick={()=>{}}
-              className="text-gray-400 hover:text-cyan-300 transition-colors duration-300"
-            >
-              <Mail className="w-6 h-6" />
-            </button>
             <a
               href="https://github.com/Absterrg0"
               target="_blank"
