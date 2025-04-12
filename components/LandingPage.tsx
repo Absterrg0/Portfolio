@@ -1,15 +1,12 @@
-'use client'
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Image from 'next/image'
-import { useRouter } from 'next/navigation'
 import GitHubCalendar from 'react-github-calendar'
-import { Mail, Github, Linkedin, Twitter, FileText } from 'lucide-react'
+import { Github, Twitter, FileText } from 'lucide-react'
 import Blogs from './Blogs'
 import EmailComponent from './email'
 
 export default function LandingPage() {
-  const router = useRouter();
 
   const skills = [
     "Next.js", "React", "TypeScript", "Tailwind CSS", "Solidity",
@@ -44,9 +41,6 @@ export default function LandingPage() {
     },
   ]
 
-  const viewResume = () => {
-    router.push('/resume');
-  }
 
   return (
     <div className="min-h-screen text-gray-100 relative overflow-hidden bg-gradient-to-b from-[#0f1218] to-[#151922]">
@@ -78,7 +72,7 @@ export default function LandingPage() {
         {/* Hero Section */}
         <section className="mb-32">
           <div className="flex flex-col md:flex-row items-center gap-16">
-            <div className="w-full md:w-1/2 space-y-8 text-center md:text-left">
+            <div className="w-full md:w-1/2 space-y-8 text-center md:text-left ">
               <h2 className="text-4xl sm:text-5xl font-bold bg-gradient-to-r from-cyan-300 to-blue-400 bg-clip-text text-transparent">
                 Web Developer & Designer
               </h2>
@@ -88,14 +82,15 @@ export default function LandingPage() {
               </p>
               
               {/* Resume Button */}
-              <button 
-                onClick={viewResume}
-                className="flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 
+              <a href="/resume " className='flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 
                            rounded-full text-white font-semibold transition-all duration-300 
-                           hover:from-cyan-600 hover:to-blue-600 hover:shadow-lg hover:shadow-blue-500/20"
+                           hover:from-cyan-600 hover:to-blue-600 hover:shadow-lg hover:shadow-blue-500/20 w-fit'>
+              <button 
+                className=" flex gap-2"
               >
                 View Resume <FileText className="w-5 h-5" />
               </button>
+                </a>
             </div>
             <div className="w-full md:w-1/2 flex justify-center">
               <div className="relative w-72 h-72 md:w-96 md:h-96">
@@ -126,7 +121,6 @@ export default function LandingPage() {
                           border border-white/10 shadow-lg hover:bg-gradient-to-r hover:from-cyan-500 
                           hover:to-blue-500 hover:text-white hover:border-transparent 
                           transition-all duration-300 ease-out"
-                style={{ animation: `fadeIn 0.6s ease-out ${index * 0.1}s both` }}
               >
                 {skill}
               </div>
@@ -186,14 +180,15 @@ export default function LandingPage() {
             ))}
           </div>
         </section>
+        <section className="mb-32">
+          <Blogs />
+        </section>
 
         <section>
           <EmailComponent></EmailComponent>
         </section>
-{/* 
-        <section className="mb-32">
-          <Blogs />
-        </section> */}
+
+ 
 
         {/* Footer */}
         <footer className="border-t border-white/10 pt-8 pb-8 flex flex-col sm:flex-row justify-between items-center">
@@ -222,18 +217,7 @@ export default function LandingPage() {
       </div>
 
 
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
+
     </div>
   )
 }

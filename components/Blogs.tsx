@@ -36,6 +36,9 @@ export default async function Blogs() {
             </div>
           </Link>
         ))}
+        <div className="ml-40 font-semibold text-2xl">
+          More coming soon...
+        </div>
       </div>
     </main>
   );
